@@ -12,9 +12,13 @@ export const districtsData: DistrictInfo[] = [
     slug: "edirne-merkez",
     isCenter: true,
     popularVillages: [
-      "Karaağaç", "Yıldırım", "Şükrüpaşa", "Kıyık", "Demirköy", "Karabulut",
-      "Avarız", "Hıdırağa", "Büyükdöllük", "Menekşesofular", "Musabeyli",
-      "Hasanağa", "Tayakadın", "Orhaniye", "İskender", "Sarayakpınar", "Yolüstü", "Budakdoğanca"
+      "Ahi", "Avarız", "Bosna", "Budakdoğanca", "Büyükdöllük", "Büyükismailçe",
+      "Değirmenyanı", "Demirhanlı", "Doyran", "Ekmekçi", "Elçili", "Eskikadın",
+      "Hacıumur", "Hasanağa", "Hatipköy", "Hıdırağa", "İskender", "Karabulut",
+      "Karakasım", "Karayusuf", "Kayapa", "Kemalköy", "Korucu", "Köşençiftliği",
+      "Küçükdöllük", "Menekşesofular", "Muratçalı", "Musabeyli", "Orhaniye",
+      "Sarayakpınar", "Sazlıdere", "Suakacağı", "Tayakadın", "Uzgaç", "Üyüklütatar",
+      "Yenikadın", "Yolüstü", "Karaağaç", "Yıldırım", "Şükrüpaşa", "Kıyık"
     ],
     allVillagesCount: 37
   },
@@ -22,9 +26,10 @@ export const districtsData: DistrictInfo[] = [
     name: "Havsa",
     slug: "havsa",
     popularVillages: [
-      "Abalar", "Arpaç", "Bakışlar", "Bostanlı", "Çukurköy", "Habiller",
-      "Hasköy", "Kabaağaç", "Köseömer", "Kulubalık", "Musul", "Naipyusuf",
-      "Necatiye", "Oğulpaşa", "Şerbettar", "Taptık", "Yolageldi"
+      "Abalar", "Arpaç", "Azatlı", "Bakışlar", "Bostanlı", "Çukurköy",
+      "Habiller", "Hasköy", "Kabaağaç", "Köseömer", "Kulubalık", "Kuzucu",
+      "Musulca", "Naipyusuf", "Necatiye", "Oğulpaşa", "Osmanlı", "Söğütlüdere",
+      "Şerbettar", "Tahal", "Taptık", "Yolageldi"
     ],
     allVillagesCount: 22
   },
@@ -32,10 +37,15 @@ export const districtsData: DistrictInfo[] = [
     name: "Uzunköprü",
     slug: "uzunkopru",
     popularVillages: [
-      "Aşçıoğlu", "Başağıl", "Bayramlı", "Beykonak", "Çakmak", "Çalıköy",
-      "Çiftlikköy", "Değirmenci", "Dereköy", "Elmalı", "Gazimehmet", "Hamidiye",
-      "Harmanlı", "Hasanpınar", "Karapınar", "Kavacık", "Kırköy", "Kırcasalih",
-      "Kurtbey", "Maksutlu", "Salarlı", "Saçlımüsellim", "Sığırcılı", "Sipahi"
+      "Alıç", "Altınyazı", "Aslıhan", "Balaban", "Balabankoru", "Başağıl",
+      "Bayramlı", "Beykonak", "Bıldır", "Çakmakköy", "Çalıköy", "Çavuşlu",
+      "Çiftlikköy", "Çobanpınarı", "Danişment", "Değirmenci", "Dereköy", "Elmalı",
+      "Eskiköy", "Gazihalil", "Gazimehmet", "Gemici", "Hamidiye", "Hamitli",
+      "Harmanlı", "Hasanpınar", "Kadıağılı", "Kadıköy", "Karabürçek", "Karapınar",
+      "Karayayla", "Kavacık", "Kavakayazma", "Kırkkavak", "Kırköy", "Kiremitçisalih",
+      "Kurdu", "Kurtbey", "Kurttepe", "Maksutlu", "Malkoçköy", "Meşeli",
+      "Muhacırkadı", "Ömerbey", "Saçlımüsellim", "Salarlı", "Sazlımalkoç", "Sığırcılı",
+      "Sipahi", "Sultanşah", "Süleymaniye", "Turnacı", "Yağmurca"
     ],
     allVillagesCount: 53
   },
@@ -43,10 +53,14 @@ export const districtsData: DistrictInfo[] = [
     name: "Keşan",
     slug: "kesan",
     popularVillages: [
-      "Ahmetbey", "Akçeşme", "Altıntaş", "Bahçeköy", "Beyköy", "Boztepe",
-      "Büyükdoğanca", "Çamlıca", "Çeltik", "Çobançeşmesi", "Danişment", "Dişbudak",
-      "Erikli", "Gökçetepe", "Karlıköy", "Kılıçköy", "Koruklu", "Maltepe",
-      "Mecidiye", "Orhaniye", "Pırnar", "Siğilli", "Suluca", "Şabanmera", "Yayla"
+      "Akçeşme", "Akhoca", "Altıntaş", "Bahçeköy", "Barağı", "Beyköy",
+      "Boztepe", "Büyükdoğanca", "Çamlıca", "Çelebi", "Çeltik", "Çobançeşmesi",
+      "Danişment", "Dişbudak", "Erikli", "Gökçetepe", "Gündüzler", "Kadıköy",
+      "Karacaali", "Karahisar", "Karasatı", "Karlı", "Kılıçköy", "Kızkapan",
+      "Koruklu", "Kozköy", "Küçükdoğanca", "Lalacık", "Mahmutköy", "Maltepe",
+      "Mecidiye", "Mercan", "Orhaniye", "Pırnar", "Sazlıdere", "Seydiköy",
+      "Siğilli", "Suluca", "Şabanmera", "Şükrüköy", "Türkmen", "Yaylaköy",
+      "Yeniceçiftlik", "Yerlisu", "Yeşilköy"
     ],
     allVillagesCount: 45
   },
@@ -54,9 +68,9 @@ export const districtsData: DistrictInfo[] = [
     name: "İpsala",
     slug: "ipsala",
     popularVillages: [
-      "Balabancık", "Esetçe", "Hacı", "İbriktepe", "Kocahıdır", "Korucu",
-      "Koyuntepe", "Kumdere", "Küçükdoğanca", "Paşaköy", "Sarıcaali", "Sultanköy",
-      "Tevfikiye", "Turpçular", "Vaysal", "Yapıldak", "Yenikarpuzlu"
+      "Aliçopehlivan", "Balabancık", "Hacı", "Hıdırköy", "İbriktepe", "Karaağaç",
+      "Kocahıdır", "Korucu", "Koyuntepe", "Kumdere", "Küçükdoğanca", "Paşaköy",
+      "Pazardere", "Sarıcaali", "Sarpdere", "Sultan", "Tevfikiye", "Turpçular", "Yapıldak"
     ],
     allVillagesCount: 19
   },
@@ -64,9 +78,10 @@ export const districtsData: DistrictInfo[] = [
     name: "Meriç",
     slug: "meric",
     popularVillages: [
-      "Adasarhanlı", "Akçadam", "Alibeyköy", "Büyükaltıağaç", "Hasırcıarnavutköy",
-      "Kadıdondurma", "Karahamza", "Karayusuflu", "Kavaklı", "Küçükaltıağaç",
-      "Küplü", "Nasuhbey", "Olacak", "Paşaelçisi", "Sağlık", "Serem", "Subaşı", "Umurca"
+      "Adasarhanlı", "Akçadam", "Akıncılar", "Alibey", "Büyükaltıağaç",
+      "Hasırcıarnavutköy", "Kadıdondurma", "Karahamza", "Karayusuflu", "Kavaklı",
+      "Küçükaltıağaç", "Küpdere", "Nasuhbey", "Olacak", "Paşayenice", "Rahmanca",
+      "Saatağacı", "Serem", "Subaşı", "Umurca", "Yakupbey", "Yenicegörice"
     ],
     allVillagesCount: 21
   },
@@ -74,9 +89,11 @@ export const districtsData: DistrictInfo[] = [
     name: "Lalapaşa",
     slug: "lalapasa",
     popularVillages: [
-      "Çallıdere", "Çömlekakpınar", "Çömlekköy", "Demirköy", "Doğanköy", "Dombay",
-      "Hacıdanişment", "Hamzabeyli", "Hanlyenice", "Hüseyinpınar", "Kalkansöğüt",
-      "Kavaklı", "Küçünlü", "Ortakçı", "Ömeroba", "Sarıdanişment", "Sinanköy", "Vaysal"
+      "Büyünlü", "Çallıdere", "Çatma", "Çömlek", "Çömlekakpınar", "Demirköy",
+      "Doğanköy", "Dombay", "Hacıdanişment", "Hacılar", "Hamzabeyli", "Hanlıyenice",
+      "Hüseyinpınar", "Kalkansöğüt", "Kavaklı", "Küçünlü", "Ortakçı", "Ömeroba",
+      "Saksağan", "Sarıdanişment", "Sinanköy", "Süleymandanişment", "Taşlımüsellim",
+      "Tuğlalık", "Uzunbayır", "Vaysal", "Yünlüce"
     ],
     allVillagesCount: 27
   },
@@ -85,7 +102,7 @@ export const districtsData: DistrictInfo[] = [
     slug: "suloglu",
     popularVillages: [
       "Akardere", "Büyükgerdelli", "Domurcalı", "Geçkinli", "Keramettin",
-      "Küküler", "Sülecik", "Taşlısekban", "Yağcılı"
+      "Küküler", "Sülecik", "Taşlısekban", "Tatarlar", "Yağcılı"
     ],
     allVillagesCount: 10
   },
@@ -93,10 +110,17 @@ export const districtsData: DistrictInfo[] = [
     name: "Enez",
     slug: "enez",
     popularVillages: [
-      "Abdullahpaşa", "Büyükevren", "Çandırlı", "Çeribaşı", "Gülçavuş", "Hasköy",
-      "Hisarlı", "Işıklı", "Karaincirli", "Kocaali", "Küçükevren", "Sultaniçe",
-      "Sütçüler", "Şehitler", "Umurbey", "Vakıf", "Yenice"
+      "Abdurrahim", "Büyükevren", "Çandır", "Çavuşköy", "Çeribaşı", "Gülçavuş",
+      "Hasköy", "Hisarlı", "Işıklı", "Karaincirli", "Kocaali", "Küçükevren",
+      "Sultaniçe", "Sütçüler", "Şehitler", "Umurbey", "Vakıf", "Yazır", "Yenice"
     ],
     allVillagesCount: 19
   }
 ];
+
+export const trakyaSiteRedirect = {
+  brandName: "Trakya Mezar Bakım",
+  siteUrl: "https://trakyamezarliktemizleme.site",
+  description: "Tekirdağ (Çorlu, Süleymanpaşa, Çerkezköy vb.) ve Kırklareli (Lüleburgaz, Babaeski vb.) bölgelerindeki kabir bakım hizmetlerimiz için Trakya sitemizi ziyaret edebilirsiniz.",
+  provinces: ["Tekirdağ", "Kırklareli"]
+};

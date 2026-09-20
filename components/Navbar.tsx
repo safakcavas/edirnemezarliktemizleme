@@ -30,13 +30,23 @@ export default function Navbar() {
             </span>
             <span>Edirne Merkez, tüm ilçeler ve 250+ köye kendi araçlarımızla yerinde hizmet</span>
           </div>
-          <div className="flex items-center gap-4 text-xs font-medium">
-            <span className="hidden md:inline text-emerald-300">📸 WhatsApp ile Fotoğraf & Video Raporu</span>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-medium">
             <a
-              href={`tel:${contactConfig.phoneRaw}`}
+              href="https://trakyamezarliktemizleme.site"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-emerald-800 hover:bg-emerald-700 text-emerald-200 border border-emerald-700 transition"
+            >
+              <span>Tekirdağ & Kırklareli için:</span>
+              <strong className="underline underline-offset-2">trakyamezarliktemizleme.site</strong>
+            </a>
+            <a
+              href={contactConfig.getWhatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white hover:text-emerald-200 transition font-bold"
             >
-              Hemen Ara: {contactConfig.phone}
+              WhatsApp: {contactConfig.phone}
             </a>
           </div>
         </div>
@@ -77,10 +87,12 @@ export default function Navbar() {
             {/* Actions */}
             <div className="hidden md:flex items-center gap-3">
               <a
-                href={`tel:${contactConfig.phoneRaw}`}
+                href={contactConfig.getWhatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:text-emerald-700 hover:border-emerald-600 transition font-medium text-sm"
               >
-                <Phone className="w-4 h-4 text-emerald-700" />
+                <MessageCircle className="w-4 h-4 text-emerald-700" />
                 <span>{contactConfig.phone}</span>
               </a>
               <a
@@ -120,20 +132,15 @@ export default function Navbar() {
         {/* Mobile Dropdown */}
         {isMobileMenuOpen && (
           <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-            <div className="grid grid-cols-2 gap-2 pt-2 pb-3 border-b border-slate-100">
-              <a
-                href={`tel:${contactConfig.phoneRaw}`}
-                className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-slate-100 text-slate-800 text-sm font-semibold"
-              >
-                <Phone className="w-4 h-4 text-emerald-700" /> Hemen Ara
-              </a>
+            <div className="pt-2 pb-3 border-b border-slate-100">
               <a
                 href={contactConfig.getWhatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-emerald-700 text-white text-sm font-semibold"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-bold shadow-sm transition"
               >
-                <MessageCircle className="w-4 h-4 fill-white text-emerald-700" /> WhatsApp
+                <MessageCircle className="w-4 h-4 fill-white text-emerald-700" />
+                <span>WhatsApp İletişim: {contactConfig.phone}</span>
               </a>
             </div>
             <nav className="flex flex-col space-y-2">

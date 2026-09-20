@@ -264,11 +264,13 @@ export default function QuoteCalculator() {
               </button>
 
               <a
-                href={`tel:${contactConfig.phoneRaw}`}
+                href={contactConfig.getWhatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm transition"
               >
-                <PhoneCall className="w-4 h-4 text-emerald-400" />
-                <span>Telefonla Ara</span>
+                <MessageCircle className="w-4 h-4 text-emerald-400 fill-emerald-400" />
+                <span>WhatsApp: {contactConfig.phone}</span>
               </a>
             </div>
 

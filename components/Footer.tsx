@@ -101,11 +101,13 @@ export default function Footer() {
             </h4>
             <div className="space-y-3 text-xs">
               <a
-                href={`tel:${contactConfig.phoneRaw}`}
+                href={contactConfig.getWhatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-600 transition"
               >
-                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="font-bold text-white">{contactConfig.phone}</span>
+                <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span className="font-bold text-white">WhatsApp: {contactConfig.phone}</span>
               </a>
 
               <a
