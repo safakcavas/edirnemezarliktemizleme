@@ -12,6 +12,10 @@ interface CaseStudy {
   beforeNotes: string[];
   afterNotes: string[];
   badge: string;
+  beforeImage: string;
+  afterImage: string;
+  beforeTag: string;
+  afterTag: string;
 }
 
 const cases: CaseStudy[] = [
@@ -20,6 +24,10 @@ const cases: CaseStudy[] = [
     title: "Merhum Mehmet Aksoy Kabir Temizliği ve Çiçeklendirme",
     location: "Edirne Köy Mezarlığı",
     badge: "Birebir Öncesi / Sonrası Karşılaştırması",
+    beforeImage: "/images/before-case1.jpg",
+    afterImage: "/images/after-case1.jpg",
+    beforeTag: "Yosun & Dikenler",
+    afterTag: "Canlı Çiçekler & Yazı Boyama",
     beforeNotes: [
       "Mermer üzerinde yoğun kara yosun, çamur lekesi ve kireç tortusu",
       "Kabir içinde kurumuş yabani otlar, çalılar ve dikenler",
@@ -38,6 +46,10 @@ const cases: CaseStudy[] = [
     title: "Keşan Köyü Kabir Bakımı & Taş Yazısı Yenileme",
     location: "Keşan / Çamlıca Köyü",
     badge: "Taş Yazısı & Çalı Budama",
+    beforeImage: "/images/before-case2.jpg",
+    afterImage: "/images/after-case2.jpg",
+    beforeTag: "Çalılar & Silik Kitabe",
+    afterTag: "Budanmış Çevre & Net Yazılar",
     beforeNotes: [
       "Mezarın üzerini kapatmış yabani ağaç ve çalı dalları",
       "Okunamaz hale gelmiş 25 yıllık baş taşı yazıları",
@@ -56,6 +68,10 @@ const cases: CaseStudy[] = [
     title: "Uzunköprü Köyü Bayram Öncesi Çiçeklendirme",
     location: "Uzunköprü / Kurtbey Köyü",
     badge: "Bayramlık Bakım & Sulama",
+    beforeImage: "/images/before-case3.jpg",
+    afterImage: "/images/after-case3.jpg",
+    beforeTag: "Kuru & Çatlamış Toprak",
+    afterTag: "Taze Dikim & Can Suyu",
     beforeNotes: [
       "Kurumuş eski çalılar ve sararmış yabani otlar",
       "Toz ve çamurla kaplanmış mezar çevresi",
@@ -98,7 +114,7 @@ export default function BeforeAfter() {
             <button
               key={c.id}
               onClick={() => setActiveCase(index)}
-              className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 ${
+              className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 cursor-pointer ${
                 activeCase === index
                   ? "bg-emerald-800 text-white shadow-md shadow-emerald-900/20"
                   : "bg-slate-100 text-slate-700 hover:bg-slate-200"
@@ -143,8 +159,8 @@ export default function BeforeAfter() {
                   {/* Real Photo Before */}
                   <div className="relative rounded-xl overflow-hidden aspect-[4/3] border border-red-900/50 group shadow-md">
                     <Image
-                      src="/images/before-cleaning-v4.jpg"
-                      alt="Temizlik Öncesi Bakımsız Mezar"
+                      src={current.beforeImage}
+                      alt={`${current.title} - Bakım Öncesi`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -152,7 +168,7 @@ export default function BeforeAfter() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-black/20" />
                     <div className="absolute bottom-3 left-3 right-3 text-xs text-red-300 font-semibold flex items-center justify-between">
                       <span>⚠️ Bakım Öncesi İlk Tespit</span>
-                      <span className="text-[11px] bg-red-950/90 px-2 py-0.5 rounded border border-red-800 text-red-300">Yosun & Dikenler</span>
+                      <span className="text-[11px] bg-red-950/90 px-2 py-0.5 rounded border border-red-800 text-red-300">{current.beforeTag}</span>
                     </div>
                   </div>
 
@@ -180,8 +196,8 @@ export default function BeforeAfter() {
                   {/* Real Photo After */}
                   <div className="relative rounded-xl overflow-hidden aspect-[4/3] border border-emerald-800/50 group shadow-md">
                     <Image
-                      src="/images/after-cleaning-v4.jpg"
-                      alt="Temizlik Sonrası Beyazlatılmış Çiçekli Mezar"
+                      src={current.afterImage}
+                      alt={`${current.title} - Bakım Sonrası`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -189,7 +205,7 @@ export default function BeforeAfter() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-black/20" />
                     <div className="absolute bottom-3 left-3 right-3 text-xs text-emerald-300 font-semibold flex items-center justify-between">
                       <span className="flex items-center gap-1"><Sparkles className="w-3.5 h-3.5 text-emerald-400 inline" /> Pırıl Pırıl Teslimat</span>
-                      <span className="text-[11px] bg-emerald-950/90 px-2 py-0.5 rounded border border-emerald-700 text-emerald-300">Canlı Çiçekler & Yazı Boyama</span>
+                      <span className="text-[11px] bg-emerald-950/90 px-2 py-0.5 rounded border border-emerald-700 text-emerald-300">{current.afterTag}</span>
                     </div>
                   </div>
 
