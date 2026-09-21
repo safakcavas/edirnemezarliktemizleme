@@ -60,10 +60,11 @@ export default function Contact() {
                 href={contactConfig.getWhatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`WhatsApp Danışma Hattı: ${contactConfig.phone}`}
                 className="flex items-center gap-4 p-4 rounded-2xl bg-slate-800/80 border border-slate-700 hover:border-emerald-500 transition group"
               >
                 <div className="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition">
-                  <MessageCircle className="w-6 h-6 fill-current" />
+                  <MessageCircle className="w-6 h-6 fill-current" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs text-slate-400">WhatsApp Danışma Hattı</p>
@@ -78,10 +79,11 @@ export default function Contact() {
                 href={contactConfig.getWhatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="WhatsApp Canlı Destek: Konum ve Fotoğraf Gönderin"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-slate-800/80 border border-slate-700 hover:border-emerald-500 transition group"
               >
                 <div className="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition">
-                  <MessageCircle className="w-6 h-6 fill-current" />
+                  <MessageCircle className="w-6 h-6 fill-current" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs text-slate-400">WhatsApp Canlı Destek</p>
@@ -94,7 +96,7 @@ export default function Contact() {
               {/* Working hours */}
               <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-800/80 border border-slate-700">
                 <div className="w-12 h-12 rounded-xl bg-teal-600/20 text-teal-400 flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6" />
+                  <Clock className="w-6 h-6" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs text-slate-400">Çalışma Saatleri</p>
@@ -107,7 +109,7 @@ export default function Contact() {
               {/* Service region */}
               <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-800/80 border border-slate-700">
                 <div className="w-12 h-12 rounded-xl bg-amber-600/20 text-amber-400 flex items-center justify-center shrink-0">
-                  <MapPin className="w-6 h-6" />
+                  <MapPin className="w-6 h-6" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs text-slate-400">Hizmet Bölgesi</p>
@@ -132,11 +134,13 @@ export default function Contact() {
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                  <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-300 mb-1">
                     Adınız ve Soyadınız
                   </label>
                   <input
                     type="text"
+                    id="contact-name"
+                    name="name"
                     required
                     placeholder="Adınız ve Soyadınız"
                     value={name}
@@ -147,11 +151,13 @@ export default function Contact() {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                    <label htmlFor="contact-phone" className="block text-xs font-semibold text-slate-300 mb-1">
                       Telefon Numaranız
                     </label>
                     <input
                       type="tel"
+                      id="contact-phone"
+                      name="phone"
                       required
                       placeholder="05XX XXX XX XX"
                       value={phone}
@@ -160,11 +166,13 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                    <label htmlFor="contact-district" className="block text-xs font-semibold text-slate-300 mb-1">
                       İlçe / Köy
                     </label>
                     <input
                       type="text"
+                      id="contact-district"
+                      name="district"
                       placeholder="Örn: Havsa Hasköy"
                       value={district}
                       onChange={(e) => setDistrict(e.target.value)}
@@ -174,10 +182,12 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                  <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-300 mb-1">
                     Talebiniz veya Mezar Durumu
                   </label>
                   <textarea
+                    id="contact-message"
+                    name="message"
                     rows={3}
                     placeholder="Yabani ot temizliği, çiçeklendirme, taş boyama vb."
                     value={message}
@@ -190,13 +200,13 @@ export default function Contact() {
                   type="submit"
                   className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-950/50 transition cursor-pointer"
                 >
-                  <Send className="w-4 h-4" />
+                  <Send className="w-4 h-4" aria-hidden="true" />
                   <span>WhatsApp ile Talebi İlet</span>
                 </button>
 
                 {submitted && (
                   <div className="p-3 rounded-xl bg-emerald-950 border border-emerald-700 text-emerald-300 text-xs flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 shrink-0" />
+                    <CheckCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                     <span>WhatsApp mesajınız oluşturuldu, yönlendiriliyorsunuz.</span>
                   </div>
                 )}

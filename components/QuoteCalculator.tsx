@@ -115,16 +115,18 @@ export default function QuoteCalculator() {
         <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200/90 relative">
           <form onSubmit={handleWhatsappSubmit} className="space-y-6">
             {/* Step 1: Location */}
-            <div>
-              <label className="block text-sm font-bold text-slate-900 mb-2">
+            <fieldset className="space-y-3">
+              <legend className="block text-sm font-bold text-slate-900 mb-2">
                 1. Mezarlığın Bulunduğu İlçe ve Köy / Mevki
-              </label>
+              </legend>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-500 mb-1">
+                  <label htmlFor="edirne-calc-district" className="block text-xs font-semibold text-slate-500 mb-1">
                     İlçe Seçin
                   </label>
                   <select
+                    id="edirne-calc-district"
+                    name="calc-district"
                     value={district}
                     onChange={(e) => setDistrict(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 font-medium text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
@@ -138,10 +140,12 @@ export default function QuoteCalculator() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-500 mb-1">
+                  <label htmlFor="edirne-calc-village" className="block text-xs font-semibold text-slate-500 mb-1">
                     Köy, Mahalle veya Mezarlık Adı
                   </label>
                   <input
+                    id="edirne-calc-village"
+                    name="calc-village"
                     type="text"
                     placeholder="Örn: Demirköy, Elmalı, Çamlıca vb."
                     value={village}
@@ -151,25 +155,26 @@ export default function QuoteCalculator() {
                 </div>
               </div>
               <p className="text-xs text-slate-500 mt-2 flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-emerald-600 inline" />
+                <MapPin className="w-3.5 h-3.5 text-emerald-600 inline" aria-hidden="true" />
                 Edirne sınırları içerisindeki tüm köylere kendi araçlarımızla 1 ziyarette gidiyoruz.
               </p>
-            </div>
+            </fieldset>
 
             {/* Step 2: Desired Services */}
-            <div className="pt-2 border-t border-slate-100">
-              <label className="block text-sm font-bold text-slate-900 mb-3">
+            <fieldset className="pt-2 border-t border-slate-100">
+              <legend className="block text-sm font-bold text-slate-900 mb-3">
                 2. Bu Ziyarette Yapılmasını İstediğiniz Hizmetleri Seçin
-              </label>
-              <div className="grid sm:grid-cols-2 gap-3">
+              </legend>
+              <div className="grid sm:grid-cols-2 gap-3" role="group" aria-label="Hizmet Seçimi">
                 {availableServices.map((srv) => {
                   const isChecked = selectedServices.includes(srv.id);
                   return (
                     <button
                       type="button"
                       key={srv.id}
+                      aria-pressed={isChecked}
                       onClick={() => toggleService(srv.id)}
-                      className={`flex items-start justify-between p-3.5 rounded-xl text-left border transition-all duration-200 ${
+                      className={`flex items-start justify-between p-3.5 rounded-xl text-left border transition-all duration-200 cursor-pointer ${
                         isChecked
                           ? "bg-emerald-50/80 border-emerald-500 text-emerald-950 font-medium shadow-sm"
                           : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
@@ -178,9 +183,9 @@ export default function QuoteCalculator() {
                       <div className="flex items-start gap-3">
                         <div className="mt-0.5 text-emerald-700">
                           {isChecked ? (
-                            <CheckSquare className="w-5 h-5 fill-emerald-600 text-white" />
+                            <CheckSquare className="w-5 h-5 fill-emerald-600 text-white" aria-hidden="true" />
                           ) : (
-                            <Square className="w-5 h-5 text-slate-400" />
+                            <Square className="w-5 h-5 text-slate-400" aria-hidden="true" />
                           )}
                         </div>
                         <span className="text-xs sm:text-sm">{srv.label}</span>
@@ -192,37 +197,58 @@ export default function QuoteCalculator() {
                   );
                 })}
               </div>
-            </div>
+            </fieldset>
 
             {/* Step 3: Contact details */}
-            <div className="pt-2 border-t border-slate-100">
-              <label className="block text-sm font-bold text-slate-900 mb-2">
+            <fieldset className="pt-2 border-t border-slate-100">
+              <legend className="block text-sm font-bold text-slate-900 mb-2">
                 3. İletişim ve Varsa Özel Notunuz
-              </label>
+              </legend>
               <div className="grid sm:grid-cols-2 gap-4 mb-3">
-                <input
-                  type="text"
-                  placeholder="Adınız ve Soyadınız"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 font-medium text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
-                />
-                <input
-                  type="tel"
-                  placeholder="Telefon Numaranız (İsteğe bağlı)"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 font-medium text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                <div>
+                  <label htmlFor="edirne-calc-name" className="block text-xs font-semibold text-slate-600 mb-1">
+                    Adınız ve Soyadınız
+                  </label>
+                  <input
+                    id="edirne-calc-name"
+                    name="calc-name"
+                    type="text"
+                    placeholder="Adınız ve Soyadınız"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 font-medium text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="edirne-calc-phone" className="block text-xs font-semibold text-slate-600 mb-1">
+                    Telefon Numaranız
+                  </label>
+                  <input
+                    id="edirne-calc-phone"
+                    name="calc-phone"
+                    type="tel"
+                    placeholder="Telefon Numaranız (İsteğe bağlı)"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 font-medium text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="edirne-calc-notes" className="block text-xs font-semibold text-slate-600 mb-1">
+                  Özel Notunuz veya Mezar Durumu
+                </label>
+                <textarea
+                  id="edirne-calc-notes"
+                  name="calc-notes"
+                  rows={2}
+                  placeholder="Varsa kabirle ilgili ek bilgi (Örn: Mezar 10 yıldır bakımsız, taşın sağ tarafı çatlak vb.)"
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 font-medium text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
-              <textarea
-                rows={2}
-                placeholder="Varsa kabirle ilgili ek bilgi (Örn: Mezar 10 yıldır bakımsız, taşın sağ tarafı çatlak vb.)"
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-slate-50 text-slate-900 font-medium text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
-              />
-            </div>
+            </fieldset>
 
             {/* Step 4: Estimated Price Bar */}
             <div className="p-4 sm:p-5 rounded-2xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row items-center justify-between gap-4">

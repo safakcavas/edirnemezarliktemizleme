@@ -40,13 +40,19 @@ export default function Regions() {
         {/* Village Search Bar */}
         <div className="max-w-xl mx-auto mb-10">
           <div className="relative">
-            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-3.5" />
+            <label htmlFor="edirne-village-search" className="sr-only">
+              Köy veya mahalle ara
+            </label>
+            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-3.5" aria-hidden="true" />
             <input
+              id="edirne-village-search"
+              name="village-search"
               type="text"
               placeholder="Köy veya mahalle adınızı arayın (Örn: Kırcasalih, Demirköy, Kurtbey...)"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-emerald-600 focus:outline-none text-sm text-slate-900 shadow-sm"
+              aria-label="Köy veya mahalle adınızı arayın"
             />
           </div>
 
@@ -56,7 +62,7 @@ export default function Regions() {
               {searchResults.length > 0 ? (
                 <div>
                   <p className="text-xs font-bold text-emerald-900 mb-2 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-700 inline" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-700 inline" aria-hidden="true" />
                     <span>Evet! Bu bölgeye düzenli kabir temizlik ve bakım hizmeti veriyoruz:</span>
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -65,7 +71,7 @@ export default function Regions() {
                         key={idx}
                         className="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-white border border-emerald-300 text-xs font-semibold text-emerald-900 shadow-sm"
                       >
-                        <MapPin className="w-3 h-3 text-emerald-600" />
+                        <MapPin className="w-3 h-3 text-emerald-600" aria-hidden="true" />
                         <strong>{res.village}</strong> ({res.district})
                       </span>
                     ))}
@@ -86,14 +92,16 @@ export default function Regions() {
         </div>
 
         {/* District Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8" role="group" aria-label="İlçe Seçimi">
           {districtsData.map((dist) => {
             const isSelected = selectedDistrict.slug === dist.slug;
             return (
               <button
                 key={dist.slug}
+                type="button"
+                aria-pressed={isSelected}
                 onClick={() => setSelectedDistrict(dist)}
-                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${
+                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
                   isSelected
                     ? "bg-emerald-800 text-white shadow-md shadow-emerald-900/20 scale-105"
                     : "bg-slate-100 text-slate-700 hover:bg-slate-200"
