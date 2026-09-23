@@ -1,6 +1,7 @@
 export interface DistrictInfo {
   name: string;
   slug: string;
+  blogSlug: string;
   isCenter?: boolean;
   popularVillages: string[];
   allVillagesCount: number;
@@ -10,6 +11,7 @@ export const districtsData: DistrictInfo[] = [
   {
     name: "Edirne Merkez",
     slug: "edirne-merkez",
+    blogSlug: "edirne-merkez-mezar-bakimi-ve-kabir-temizligi",
     isCenter: true,
     popularVillages: [
       "Ahi", "Avarız", "Bosna", "Budakdoğanca", "Büyükdöllük", "Büyükismailçe",
@@ -25,6 +27,7 @@ export const districtsData: DistrictInfo[] = [
   {
     name: "Havsa",
     slug: "havsa",
+    blogSlug: "havsa-mezar-bakimi-ve-kabir-temizleme",
     popularVillages: [
       "Abalar", "Arpaç", "Azatlı", "Bakışlar", "Bostanlı", "Çukurköy",
       "Habiller", "Hasköy", "Kabaağaç", "Köseömer", "Kulubalık", "Kuzucu",
@@ -36,6 +39,7 @@ export const districtsData: DistrictInfo[] = [
   {
     name: "Uzunköprü",
     slug: "uzunkopru",
+    blogSlug: "uzunkopru-mezar-bakimi-ve-kabir-temizligi",
     popularVillages: [
       "Alıç", "Altınyazı", "Aslıhan", "Balaban", "Balabankoru", "Başağıl",
       "Bayramlı", "Beykonak", "Bıldır", "Çakmakköy", "Çalıköy", "Çavuşlu",
@@ -52,6 +56,7 @@ export const districtsData: DistrictInfo[] = [
   {
     name: "Keşan",
     slug: "kesan",
+    blogSlug: "kesan-mezar-bakimi-ve-kabir-temizligi",
     popularVillages: [
       "Akçeşme", "Akhoca", "Altıntaş", "Bahçeköy", "Barağı", "Beyköy",
       "Boztepe", "Büyükdoğanca", "Çamlıca", "Çelebi", "Çeltik", "Çobançeşmesi",
@@ -67,6 +72,7 @@ export const districtsData: DistrictInfo[] = [
   {
     name: "İpsala",
     slug: "ipsala",
+    blogSlug: "ipsala-mezar-bakimi-ve-kabir-temizleme",
     popularVillages: [
       "Aliçopehlivan", "Balabancık", "Hacı", "Hıdırköy", "İbriktepe", "Karaağaç",
       "Kocahıdır", "Korucu", "Koyuntepe", "Kumdere", "Küçükdoğanca", "Paşaköy",
@@ -77,6 +83,7 @@ export const districtsData: DistrictInfo[] = [
   {
     name: "Meriç",
     slug: "meric",
+    blogSlug: "meric-mezar-bakimi-ve-kabir-temizligi",
     popularVillages: [
       "Adasarhanlı", "Akçadam", "Akıncılar", "Alibey", "Büyükaltıağaç",
       "Hasırcıarnavutköy", "Kadıdondurma", "Karahamza", "Karayusuflu", "Kavaklı",
@@ -88,6 +95,7 @@ export const districtsData: DistrictInfo[] = [
   {
     name: "Lalapaşa",
     slug: "lalapasa",
+    blogSlug: "lalapasa-mezar-bakimi-ve-koy-kabir-temizleme",
     popularVillages: [
       "Büyünlü", "Çallıdere", "Çatma", "Çömlek", "Çömlekakpınar", "Demirköy",
       "Doğanköy", "Dombay", "Hacıdanişment", "Hacılar", "Hamzabeyli", "Hanlıyenice",
@@ -100,6 +108,7 @@ export const districtsData: DistrictInfo[] = [
   {
     name: "Süloğlu",
     slug: "suloglu",
+    blogSlug: "suloglu-mezar-bakimi-ve-kabir-temizleme",
     popularVillages: [
       "Akardere", "Büyükgerdelli", "Domurcalı", "Geçkinli", "Keramettin",
       "Küküler", "Sülecik", "Taşlısekban", "Tatarlar", "Yağcılı"
@@ -109,6 +118,7 @@ export const districtsData: DistrictInfo[] = [
   {
     name: "Enez",
     slug: "enez",
+    blogSlug: "enez-mezar-bakimi-ve-kabir-temizligi",
     popularVillages: [
       "Abdurrahim", "Büyükevren", "Çandır", "Çavuşköy", "Çeribaşı", "Gülçavuş",
       "Hasköy", "Hisarlı", "Işıklı", "Karaincirli", "Kocaali", "Küçükevren",
